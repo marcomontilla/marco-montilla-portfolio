@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 transition-colors duration-300;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.dark body {
+    @apply bg-dark-base text-slate-100;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-indigo-400 dark:bg-indigo-500;
+  }
+
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+}
+
+@layer components {
+  /* Glass morphism base */
+  .glass {
+    @apply bg-white/70 dark:bg-white/[0.04] backdrop-blur-xl;
+    @apply border border-slate-200/60 dark:border-white/[0.07];
+    @apply shadow-glass;
+  }
+
+  .glass-strong {
+    @apply bg-white/90 dark:bg-white/[0.07] backdrop-blur-2xl;
+    @apply border border-slate-200/80 dark:border-white/[0.1];
+    @apply shadow-glass-lg;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+    background-size: 200% auto;
+  }
+
+  .text-gradient-animate {
+    @apply text-gradient;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Section base */
+  .section {
+    @apply py-24 px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-inner {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Dot grid / star map grid */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(148,163,184,0.25) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .dark .dot-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Glow orb */
+  .orb {
+    @apply absolute rounded-full blur-3xl pointer-events-none;
+  }
+
+  /* Space / nebula gradient overlays */
+  .nebula-glow {
+    background: radial-gradient(ellipse at 30% 40%, rgba(59,130,246,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 60%, rgba(139,92,246,0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 55% 90%, rgba(99,102,241,0.05) 0%, transparent 45%);
+  }
+
+  /* Profile photo ring */
+  .photo-ring {
+    background: conic-gradient(
+      from 180deg,
+      #6366f1,
+      #3b82f6,
+      #8b5cf6,
+      #6366f1
+    );
+  }
+
+  /* Skill tag */
+  .skill-tag {
+    @apply px-3 py-1.5 text-xs font-medium font-mono rounded-lg;
+    @apply bg-indigo-50 text-indigo-700 border border-indigo-100;
+    @apply dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20;
+    @apply transition-all duration-200 hover:scale-105;
+  }
+
+  /* Timeline */
+  .timeline-dot {
+    @apply w-3 h-3 rounded-full bg-indigo-500 border-2 border-indigo-300 dark:border-indigo-800;
+    @apply ring-4 ring-indigo-500/20;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply text-sm font-medium text-slate-600 dark:text-slate-400;
+    @apply hover:text-slate-900 dark:hover:text-white transition-colors duration-200;
+    @apply relative;
+  }
+
+  .nav-link.active {
+    @apply text-indigo-600 dark:text-indigo-400;
+  }
+
+  /* Highlight bullet */
+  .highlight-item::before {
+    content: '';
+    @apply inline-block w-1.5 h-1.5 rounded-full bg-indigo-500 mr-3 mt-2 flex-shrink-0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@layer utilities {
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-600 { animation-delay: 0.6s; }
+  .animation-delay-800 { animation-delay: 0.8s; }
+
+  .text-balance { text-wrap: balance; }
+
+  /* Noise texture overlay for premium feel */
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.4;
+  }
+}
