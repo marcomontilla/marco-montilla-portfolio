@@ -81,13 +81,39 @@
 
   /* Dot grid / star map grid */
   .dot-grid {
-    background-image: radial-gradient(circle, rgba(148,163,184,0.25) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(99,102,241,0.18) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 
   .dark .dot-grid {
     background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
     background-size: 28px 28px;
+  }
+
+  /* Hero ambient background — light vs dark */
+  .hero-ambient {
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.13) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.11) 0%, transparent 50%);
+  }
+  .dark .hero-ambient {
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(59,130,246,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.08) 0%, transparent 50%);
+  }
+
+  /* Hero nebula orbs — light vs dark */
+  .hero-orb-blue {
+    background: radial-gradient(circle, rgba(99,102,241,0.22) 0%, transparent 70%);
+  }
+  .dark .hero-orb-blue {
+    background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+  }
+  .hero-orb-purple {
+    background: radial-gradient(circle, rgba(139,92,246,0.20) 0%, transparent 70%);
+  }
+  .dark .hero-orb-purple {
+    background: radial-gradient(circle, rgba(139,92,246,0.16) 0%, transparent 70%);
   }
 
   /* Glow orb */

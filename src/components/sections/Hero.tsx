@@ -98,22 +98,15 @@ export function Hero() {
     <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16">
 
       {/* ── Background layers ── */}
-      {/* Deep space gradient */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at 20% 50%, rgba(59,130,246,0.07) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.08) 0%, transparent 50%)',
-        }}
-      />
-      {/* Star field */}
+      {/* Ambient gradient */}
+      <div className="hero-ambient absolute inset-0 pointer-events-none" />
+      {/* Star field — dark mode only */}
       <StarField count={100} />
-      {/* Star map grid */}
-      <div className="absolute inset-0 dot-grid pointer-events-none opacity-60 dark:opacity-40" />
+      {/* Dot grid */}
+      <div className="absolute inset-0 dot-grid pointer-events-none opacity-70 dark:opacity-40" />
       {/* Nebula orbs */}
-      <div className="orb w-[480px] h-[480px] -top-32 -left-24 animate-float"
-        style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)', opacity: 1 }} />
-      <div className="orb w-[380px] h-[380px] -bottom-24 -right-16 animate-float-delayed"
-        style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.16) 0%, transparent 70%)', opacity: 1 }} />
+      <div className="orb hero-orb-blue w-[480px] h-[480px] -top-32 -left-24 animate-float" />
+      <div className="orb hero-orb-purple w-[380px] h-[380px] -bottom-24 -right-16 animate-float-delayed" />
 
       {/* ── Content ── */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">

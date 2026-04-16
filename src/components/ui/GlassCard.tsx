@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { BorderGlowCard } from './BorderGlowCard'
 
 interface GlassCardProps {
@@ -11,19 +12,32 @@ interface GlassCardProps {
   animated?: boolean
 }
 
+function useIsDark() {
+  const [isDark, setIsDark] = useState(
+    typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  )
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains('dark'))
+    })
+    observer.observe(document.documentElement, { attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  }, [])
+  return isDark
+}
+
 /**
  * GlassCard — wraps BorderGlowCard with site-palette defaults.
  * className goes to .border-glow-inner (the content container).
  * outerClassName goes to the outer .border-glow-card wrapper.
- * backgroundColor is resolved per-render from the current theme class on <html>.
+ * Theme is reactive — updates when the dark class changes on <html>.
  */
 export function GlassCard({ children, className = '', outerClassName = '', onClick, animated = false }: GlassCardProps) {
-  const isDark = typeof document !== 'undefined'
-    && document.documentElement.classList.contains('dark')
+  const isDark = useIsDark()
 
   return (
     <BorderGlowCard
-      backgroundColor={isDark ? '#0d1426' : '#f0f2f9'}
+      backgroundColor={isDark ? '#0d1426' : '#ffffff'}
       className={outerClassName}
       innerClassName={`${className}${onClick ? ' cursor-pointer' : ''}`}
       animated={animated}
@@ -37,12 +51,11 @@ export function GlassCard({ children, className = '', outerClassName = '', onCli
 }
 
 export function GlassCardStrong({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const isDark = typeof document !== 'undefined'
-    && document.documentElement.classList.contains('dark')
+  const isDark = useIsDark()
 
   return (
     <BorderGlowCard
-      backgroundColor={isDark ? '#0d1426' : '#f0f2f9'}
+      backgroundColor={isDark ? '#0d1426' : '#ffffff'}
       innerClassName={className}
       glowIntensity={1.2}
       fillOpacity={0.55}
