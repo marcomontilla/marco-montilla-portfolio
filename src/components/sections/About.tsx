@@ -64,7 +64,7 @@ export function About() {
 
                 {/* CV download */}
                 <a
-                  href="/Marco_Resume.pdf"
+                  href={`${import.meta.env.BASE_URL}Marco_Resume.pdf`}
                   download="Marco_Resume.pdf"
                   className={[
                     'ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium',

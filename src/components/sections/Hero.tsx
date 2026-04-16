@@ -72,7 +72,7 @@ function ProfilePhoto() {
         {/* Inner border spacing */}
         <div className="w-full h-full rounded-full p-[2px] bg-dark-base/80">
           <img
-            src="/profile.jpg"
+            src={`${import.meta.env.BASE_URL}profile.jpg`}
             alt="Marco Montilla"
             className="w-full h-full rounded-full object-cover object-center"
             loading="eager"
@@ -170,7 +170,7 @@ export function Hero() {
               </Button>
 
               <a
-                href="/Marco_Resume.pdf"
+                href={`${import.meta.env.BASE_URL}Marco_Resume.pdf`}
                 download="Marco_Resume.pdf"
                 className={[
                   'inline-flex items-center gap-2 px-8 py-3.5 text-base font-medium rounded-xl',
