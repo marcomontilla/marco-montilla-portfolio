@@ -6,7 +6,7 @@
  * so that ::before's `linear-gradient(var(--card-bg)) padding-box` always
  * matches the actual rendered card background. Any mismatch breaks the effect.
  */
-import { useRef, useCallback, useEffect, type ReactNode } from 'react'
+import { useRef, useCallback, useEffect, useState, type ReactNode } from 'react'
 import './border-glow.css'
 
 // ── Helpers ───────────────────────────────────────────────────────────
@@ -63,6 +63,22 @@ function animateValue({ start = 0, end = 100, duration = 1000, delay = 0, ease =
   setTimeout(() => requestAnimationFrame(tick), delay)
 }
 
+// ── Theme hook ────────────────────────────────────────────────────────
+
+function useIsDark() {
+  const [isDark, setIsDark] = useState(
+    typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  )
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains('dark'))
+    })
+    observer.observe(document.documentElement, { attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  }, [])
+  return isDark
+}
+
 // ── Component ─────────────────────────────────────────────────────────
 
 export interface BorderGlowCardProps {
@@ -110,16 +126,10 @@ export function BorderGlowCard({
   fillOpacity = 0.5,
 }: BorderGlowCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
+  const isDark = useIsDark()
 
-  // Resolve background: use explicit prop, else read from CSS variable set by theme
-  const resolvedBg = backgroundColor ?? (() => {
-    if (typeof document !== 'undefined') {
-      return document.documentElement.classList.contains('dark')
-        ? '#0d1426'
-        : '#f0f2f9'
-    }
-    return '#0d1426'
-  })()
+  // Resolve background: use explicit prop, else derive from current theme reactively
+  const resolvedBg = backgroundColor ?? (isDark ? '#0d1426' : '#ffffff')
 
   const getCenterOfElement = useCallback((el: HTMLElement) => {
     const { width, height } = el.getBoundingClientRect()
