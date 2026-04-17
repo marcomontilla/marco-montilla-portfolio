@@ -36,7 +36,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-indigo-400 dark:bg-indigo-500;
+    @apply bg-zulia-400 dark:bg-zulia-400;
   }
 
   * {
@@ -61,7 +61,7 @@
   /* Text gradient */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%);
+    background-image: linear-gradient(135deg, #0080C8 0%, #0068A8 50%, #0080C8 100%);
     background-size: 200% auto;
   }
 
@@ -81,7 +81,7 @@
 
   /* Dot grid / star map grid */
   .dot-grid {
-    background-image: radial-gradient(circle, rgba(99,102,241,0.18) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0,128,200,0.15) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 
@@ -93,27 +93,27 @@
   /* Hero ambient background — light vs dark */
   .hero-ambient {
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.13) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.11) 0%, transparent 50%);
+      radial-gradient(ellipse at 20% 50%, rgba(0,128,200,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(0,104,168,0.08) 0%, transparent 50%);
   }
   .dark .hero-ambient {
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(59,130,246,0.07) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.08) 0%, transparent 50%);
+      radial-gradient(ellipse at 20% 50%, rgba(0,128,200,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(0,128,200,0.06) 0%, transparent 50%);
   }
 
   /* Hero nebula orbs — light vs dark */
   .hero-orb-blue {
-    background: radial-gradient(circle, rgba(99,102,241,0.22) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0,128,200,0.20) 0%, transparent 70%);
   }
   .dark .hero-orb-blue {
-    background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0,128,200,0.18) 0%, transparent 70%);
   }
   .hero-orb-purple {
-    background: radial-gradient(circle, rgba(139,92,246,0.20) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,204,0,0.14) 0%, transparent 70%);
   }
   .dark .hero-orb-purple {
-    background: radial-gradient(circle, rgba(139,92,246,0.16) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,204,0,0.09) 0%, transparent 70%);
   }
 
   /* Glow orb */
@@ -123,34 +123,34 @@
 
   /* Space / nebula gradient overlays */
   .nebula-glow {
-    background: radial-gradient(ellipse at 30% 40%, rgba(59,130,246,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 60%, rgba(139,92,246,0.07) 0%, transparent 55%),
-                radial-gradient(ellipse at 55% 90%, rgba(99,102,241,0.05) 0%, transparent 45%);
+    background: radial-gradient(ellipse at 30% 40%, rgba(0,128,200,0.07) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 60%, rgba(0,104,168,0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 55% 90%, rgba(0,128,200,0.04) 0%, transparent 45%);
   }
 
   /* Profile photo ring */
   .photo-ring {
     background: conic-gradient(
       from 180deg,
-      #6366f1,
-      #3b82f6,
-      #8b5cf6,
-      #6366f1
+      #0080C8,
+      #3399E0,
+      #FFCC00,
+      #0080C8
     );
   }
 
   /* Skill tag */
   .skill-tag {
     @apply px-3 py-1.5 text-xs font-medium font-mono rounded-lg;
-    @apply bg-indigo-50 text-indigo-700 border border-indigo-100;
-    @apply dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20;
+    @apply bg-zulia-50 text-zulia-600 border border-zulia-100;
+    @apply dark:bg-zulia-400/10 dark:text-zulia-200 dark:border-zulia-400/20;
     @apply transition-all duration-200 hover:scale-105;
   }
 
   /* Timeline */
   .timeline-dot {
-    @apply w-3 h-3 rounded-full bg-indigo-500 border-2 border-indigo-300 dark:border-indigo-800;
-    @apply ring-4 ring-indigo-500/20;
+    @apply w-3 h-3 rounded-full bg-zulia-400 border-2 border-zulia-200 dark:border-zulia-700;
+    @apply ring-4 ring-zulia-400/20;
   }
 
   /* Nav link */
@@ -161,13 +161,13 @@
   }
 
   .nav-link.active {
-    @apply text-indigo-600 dark:text-indigo-400;
+    @apply text-zulia-500 dark:text-zulia-300;
   }
 
   /* Highlight bullet */
   .highlight-item::before {
     content: '';
-    @apply inline-block w-1.5 h-1.5 rounded-full bg-indigo-500 mr-3 mt-2 flex-shrink-0;
+    @apply inline-block w-1.5 h-1.5 rounded-full bg-zulia-400 mr-3 mt-2 flex-shrink-0;
   }
 }
 

@@ -1,16 +1,16 @@
 /* ── BorderGlow Card ─────────────────────────────────────────────────────
    Source: ReactBits (MIT) — https://reactbits.dev/components/border-glow
-   Palette: indigo / violet / blue to match site design system.
+   Palette: Zulia flag — blue #0080C8 / gold #FFCC00 / black / white.
    --card-bg is set via inline style (JS) so ::before masking always matches.
    CSS only handles theme-level fallbacks and light-mode blend override.
    ────────────────────────────────────────────────────────────────────── */
 
 /* ── Light-mode card bg (fallback only — inline style takes precedence) ── */
 :root {
-  --portfolio-card-bg: #f0f2f9;
+  --portfolio-card-bg: #F4F7FA;
 }
 .dark {
-  --portfolio-card-bg: #0d1426;
+  --portfolio-card-bg: #0E1420;
 }
 
 /* ── Base card ── */
@@ -29,7 +29,7 @@
   transform: translate3d(0, 0, 0.01px);
   display: grid;
   border: 1px solid rgb(255 255 255 / 15%);
-  background: var(--card-bg, #0d1426);
+  background: var(--card-bg, #0E1420);
   overflow: visible;
   box-shadow:
     rgba(0, 0, 0, 0.1) 0px 1px 2px,
@@ -47,7 +47,7 @@
     0 1px 2px rgba(0, 0, 0, 0.04),
     0 2px 8px rgba(0, 0, 0, 0.06),
     0 8px 24px rgba(0, 0, 0, 0.07),
-    0 0 0 1px rgba(99, 102, 241, 0.06);
+    0 0 0 1px rgba(0, 128, 200, 0.08);
 }
 
 /* ── Shared pseudo + edge-light base ── */
@@ -74,16 +74,16 @@
 .border-glow-card::before {
   border: 1px solid transparent;
   background:
-    linear-gradient(var(--card-bg, #0d1426) 0 100%) padding-box,
+    linear-gradient(var(--card-bg, #0E1420) 0 100%) padding-box,
     linear-gradient(rgb(255 255 255 / 0%) 0% 100%) border-box,
-    var(--gradient-one,   radial-gradient(at 80% 55%, hsla(268,100%,76%,1) 0px, transparent 50%)) border-box,
-    var(--gradient-two,   radial-gradient(at 69% 34%, hsla(349,100%,74%,1) 0px, transparent 50%)) border-box,
-    var(--gradient-three, radial-gradient(at 8%  6%,  hsla(136,100%,78%,1) 0px, transparent 50%)) border-box,
-    var(--gradient-four,  radial-gradient(at 41% 38%, hsla(192,100%,64%,1) 0px, transparent 50%)) border-box,
-    var(--gradient-five,  radial-gradient(at 86% 85%, hsla(186,100%,74%,1) 0px, transparent 50%)) border-box,
-    var(--gradient-six,   radial-gradient(at 82% 18%, hsla(52, 100%,65%,1) 0px, transparent 50%)) border-box,
-    var(--gradient-seven, radial-gradient(at 51% 4%,  hsla(12, 100%,72%,1) 0px, transparent 50%)) border-box,
-    var(--gradient-base,  linear-gradient(#c299ff 0 100%)) border-box;
+    var(--gradient-one,   radial-gradient(at 80% 55%, hsla(204,100%,72%,1) 0px, transparent 50%)) border-box,
+    var(--gradient-two,   radial-gradient(at 69% 34%, hsla(48,100%,60%,1)  0px, transparent 50%)) border-box,
+    var(--gradient-three, radial-gradient(at 8%  6%,  hsla(192,100%,65%,1) 0px, transparent 50%)) border-box,
+    var(--gradient-four,  radial-gradient(at 41% 38%, hsla(210,100%,64%,1) 0px, transparent 50%)) border-box,
+    var(--gradient-five,  radial-gradient(at 86% 85%, hsla(200,100%,70%,1) 0px, transparent 50%)) border-box,
+    var(--gradient-six,   radial-gradient(at 82% 18%, hsla(42, 100%,58%,1) 0px, transparent 50%)) border-box,
+    var(--gradient-seven, radial-gradient(at 51% 4%,  hsla(180,100%,60%,1) 0px, transparent 50%)) border-box,
+    var(--gradient-base,  linear-gradient(#0080C8 0 100%)) border-box;
 
   opacity: calc(
     (var(--edge-proximity) - var(--color-sensitivity)) /
@@ -103,14 +103,14 @@
 .border-glow-card::after {
   border: 1px solid transparent;
   background:
-    var(--gradient-one,   radial-gradient(at 80% 55%, hsla(268,100%,76%,1) 0px, transparent 50%)) padding-box,
-    var(--gradient-two,   radial-gradient(at 69% 34%, hsla(349,100%,74%,1) 0px, transparent 50%)) padding-box,
-    var(--gradient-three, radial-gradient(at 8%  6%,  hsla(136,100%,78%,1) 0px, transparent 50%)) padding-box,
-    var(--gradient-four,  radial-gradient(at 41% 38%, hsla(192,100%,64%,1) 0px, transparent 50%)) padding-box,
-    var(--gradient-five,  radial-gradient(at 86% 85%, hsla(186,100%,74%,1) 0px, transparent 50%)) padding-box,
-    var(--gradient-six,   radial-gradient(at 82% 18%, hsla(52, 100%,65%,1) 0px, transparent 50%)) padding-box,
-    var(--gradient-seven, radial-gradient(at 51% 4%,  hsla(12, 100%,72%,1) 0px, transparent 50%)) padding-box,
-    var(--gradient-base,  linear-gradient(#c299ff 0 100%)) padding-box;
+    var(--gradient-one,   radial-gradient(at 80% 55%, hsla(204,100%,72%,1) 0px, transparent 50%)) padding-box,
+    var(--gradient-two,   radial-gradient(at 69% 34%, hsla(48,100%,60%,1)  0px, transparent 50%)) padding-box,
+    var(--gradient-three, radial-gradient(at 8%  6%,  hsla(192,100%,65%,1) 0px, transparent 50%)) padding-box,
+    var(--gradient-four,  radial-gradient(at 41% 38%, hsla(210,100%,64%,1) 0px, transparent 50%)) padding-box,
+    var(--gradient-five,  radial-gradient(at 86% 85%, hsla(200,100%,70%,1) 0px, transparent 50%)) padding-box,
+    var(--gradient-six,   radial-gradient(at 82% 18%, hsla(42, 100%,58%,1) 0px, transparent 50%)) padding-box,
+    var(--gradient-seven, radial-gradient(at 51% 4%,  hsla(180,100%,60%,1) 0px, transparent 50%)) padding-box,
+    var(--gradient-base,  linear-gradient(#0080C8 0 100%)) padding-box;
 
   mask-image:
     linear-gradient(to bottom, black, black),

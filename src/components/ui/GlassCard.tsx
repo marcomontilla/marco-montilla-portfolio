@@ -37,7 +37,7 @@ export function GlassCard({ children, className = '', outerClassName = '', onCli
 
   return (
     <BorderGlowCard
-      backgroundColor={isDark ? '#0d1426' : '#ffffff'}
+      backgroundColor={isDark ? '#0E1420' : '#ffffff'}
       className={outerClassName}
       innerClassName={`${className}${onClick ? ' cursor-pointer' : ''}`}
       animated={animated}
@@ -55,7 +55,7 @@ export function GlassCardStrong({ children, className = '' }: { children: React.
 
   return (
     <BorderGlowCard
-      backgroundColor={isDark ? '#0d1426' : '#ffffff'}
+      backgroundColor={isDark ? '#0E1420' : '#ffffff'}
       innerClassName={className}
       glowIntensity={1.2}
       fillOpacity={0.55}

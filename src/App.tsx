@@ -1,4 +1,5 @@
 import { useTheme } from '@/hooks/useTheme'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
@@ -13,19 +14,21 @@ export default function App() {
   useTheme()
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-dark-base transition-colors duration-300">
-      <Navbar />
+    <LanguageProvider>
+      <div className="min-h-screen bg-slate-50 dark:bg-dark-base transition-colors duration-300">
+        <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }

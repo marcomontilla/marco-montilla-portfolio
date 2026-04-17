@@ -14,10 +14,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<Variant, string> = {
   primary: [
-    'bg-gradient-to-r from-indigo-500 to-violet-600',
-    'hover:from-indigo-600 hover:to-violet-700',
-    'text-white shadow-lg shadow-indigo-500/25',
-    'hover:shadow-xl hover:shadow-indigo-500/30',
+    'bg-gradient-to-r from-zulia-400 to-zulia-600',
+    'hover:from-zulia-500 hover:to-zulia-700',
+    'text-white shadow-lg shadow-zulia-400/25',
+    'hover:shadow-xl hover:shadow-zulia-400/30',
     'hover:-translate-y-0.5',
   ].join(' '),
 
@@ -37,10 +37,10 @@ const variants: Record<Variant, string> = {
   ].join(' '),
 
   outline: [
-    'border border-indigo-500/50 dark:border-indigo-400/40',
-    'text-indigo-600 dark:text-indigo-400',
-    'hover:bg-indigo-50 dark:hover:bg-indigo-500/10',
-    'hover:border-indigo-500 dark:hover:border-indigo-400',
+    'border border-zulia-400/50 dark:border-zulia-300/40',
+    'text-zulia-500 dark:text-zulia-300',
+    'hover:bg-zulia-50 dark:hover:bg-zulia-400/10',
+    'hover:border-zulia-400 dark:hover:border-zulia-300',
     'hover:-translate-y-0.5',
   ].join(' '),
 }
@@ -56,7 +56,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const base = [
       'inline-flex items-center justify-center font-medium rounded-xl',
       'transition-all duration-200 cursor-pointer select-none',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zulia-400 focus-visible:ring-offset-2',
       'dark:focus-visible:ring-offset-dark-base',
       variants[variant],
       sizes[size],

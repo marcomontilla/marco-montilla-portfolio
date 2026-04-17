@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/Button'
 import { BorderGlowCard } from '@/components/ui/BorderGlowCard'
 import { StarField } from '@/components/ui/StarField'
 import { useCounter } from '@/hooks/useCounter'
-import { personal, stats } from '@/data/resume'
+import { personal } from '@/data/resume'
+import { useLanguage } from '@/contexts/LanguageContext'
+import type { StatItem } from '@/types'
 
 function StatPill({
   label, value, suffix, prefix = '', delay,
@@ -38,24 +40,23 @@ function ProfilePhoto() {
         className="absolute rounded-full blur-3xl pointer-events-none"
         style={{
           width: 360, height: 360,
-          background: 'radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(59,130,246,0.1) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0,128,200,0.20) 0%, rgba(51,153,224,0.08) 50%, transparent 70%)',
         }}
       />
 
-      {/* Orbit ring — decorative */}
+      {/* Orbit ring */}
       <div
-        className="absolute rounded-full border border-indigo-500/15 pointer-events-none"
+        className="absolute rounded-full border border-zulia-400/15 pointer-events-none"
         style={{ width: 310, height: 310 }}
       >
-        {/* Orbit dot */}
         <div
-          className="absolute w-2.5 h-2.5 rounded-full bg-indigo-400/60 -top-1.5 left-1/2 -translate-x-1/2 animate-orbit"
+          className="absolute w-2.5 h-2.5 rounded-full bg-zulia-300/70 -top-1.5 left-1/2 -translate-x-1/2 animate-orbit"
           style={{ transformOrigin: '50% 155px' }}
         />
       </div>
 
       <div
-        className="absolute rounded-full border border-indigo-400/8 pointer-events-none"
+        className="absolute rounded-full border border-zulia-400/8 pointer-events-none"
         style={{ width: 360, height: 360 }}
       />
 
@@ -63,13 +64,12 @@ function ProfilePhoto() {
       <div
         className="relative rounded-full p-[3px] animate-float"
         style={{
-          background: 'conic-gradient(from 180deg, #6366f1, #3b82f6, #8b5cf6, #6366f1)',
+          background: 'conic-gradient(from 180deg, #0080C8, #3399E0, #FFCC00, #0080C8)',
           width: 240,
           height: 240,
-          boxShadow: '0 0 0 1px rgba(99,102,241,0.2), 0 20px 60px rgba(0,0,0,0.45)',
+          boxShadow: '0 0 0 1px rgba(0,128,200,0.25), 0 20px 60px rgba(0,0,0,0.45)',
         }}
       >
-        {/* Inner border spacing */}
         <div className="w-full h-full rounded-full p-[2px] bg-dark-base/80">
           <img
             src={`${import.meta.env.BASE_URL}profile.jpg`}
@@ -86,7 +86,7 @@ function ProfilePhoto() {
         style={{ animation: 'float 7s ease-in-out 1s infinite' }}
       >
         <p className="text-xs font-mono text-slate-600 dark:text-slate-300 text-center">
-          <span className="text-indigo-500 dark:text-indigo-400">@</span>marcomontilla
+          <span className="text-zulia-400 dark:text-zulia-300">@</span>marcomontilla
         </p>
       </div>
     </div>
@@ -94,21 +94,20 @@ function ProfilePhoto() {
 }
 
 export function Hero() {
+  const { t } = useLanguage()
+  const { personal: tp, viewWork, downloadCV } = { ...t.hero, personal: t.hero.personal }
+
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16">
 
-      {/* ── Background layers ── */}
-      {/* Ambient gradient */}
+      {/* Background layers */}
       <div className="hero-ambient absolute inset-0 pointer-events-none" />
-      {/* Star field — dark mode only */}
       <StarField count={100} />
-      {/* Dot grid */}
       <div className="absolute inset-0 dot-grid pointer-events-none opacity-70 dark:opacity-40" />
-      {/* Nebula orbs */}
       <div className="orb hero-orb-blue w-[480px] h-[480px] -top-32 -left-24 animate-float" />
       <div className="orb hero-orb-purple w-[380px] h-[380px] -bottom-24 -right-16 animate-float-delayed" />
 
-      {/* ── Content ── */}
+      {/* Content */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -123,7 +122,7 @@ export function Hero() {
               style={{ opacity: 0, animation: 'fadeIn 0.6s ease 0.1s forwards' }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              {personal.availabilityNote}
+              {tp.availabilityNote}
             </div>
 
             {/* Headline */}
@@ -138,15 +137,15 @@ export function Hero() {
             {/* Role */}
             <div style={{ opacity: 0, animation: 'fadeIn 0.65s ease 0.4s forwards' }}>
               <p className="mt-4 text-base font-mono font-medium text-slate-500 dark:text-slate-400">
-                {personal.titleHighlight}{' '}
-                <span className="text-indigo-500 dark:text-indigo-400">{personal.title}</span>
+                {tp.titleHighlight}{' '}
+                <span className="text-zulia-400 dark:text-zulia-300">{tp.title}</span>
               </p>
             </div>
 
             {/* Tagline */}
             <div style={{ opacity: 0, animation: 'fadeIn 0.65s ease 0.52s forwards' }}>
               <p className="mt-4 text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
-                {personal.tagline}
+                {tp.tagline}
               </p>
             </div>
 
@@ -159,7 +158,7 @@ export function Hero() {
                 size="lg"
                 onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                View my work
+                {viewWork}
               </Button>
 
               <a
@@ -175,7 +174,7 @@ export function Hero() {
                 ].join(' ')}
               >
                 <Download size={15} />
-                Download CV
+                {downloadCV}
               </a>
             </div>
 
@@ -195,7 +194,7 @@ export function Hero() {
                   aria-label={label}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="w-9 h-9 rounded-xl flex items-center justify-center glass text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-all duration-200 hover:-translate-y-0.5"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center glass text-slate-500 dark:text-slate-400 hover:text-zulia-400 dark:hover:text-zulia-300 transition-all duration-200 hover:-translate-y-0.5"
                 >
                   <Icon size={16} />
                 </a>
@@ -219,7 +218,7 @@ export function Hero() {
           className="mt-16 lg:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-3"
           style={{ opacity: 0, animation: 'fadeIn 0.7s ease 0.9s forwards' }}
         >
-          {stats.map((stat, i) => (
+          {t.stats.map((stat: StatItem, i: number) => (
             <BorderGlowCard
               key={stat.label}
               borderRadius={16}
@@ -241,7 +240,7 @@ export function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-400 dark:text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-400 dark:text-slate-500 hover:text-zulia-400 dark:hover:text-zulia-300 transition-colors duration-200"
         style={{ opacity: 0, animation: 'fadeIn 0.6s ease 1.4s forwards' }}
         aria-label="Scroll down"
       >

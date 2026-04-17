@@ -7,17 +7,37 @@ export default {
     extend: {
       colors: {
         dark: {
-          base: '#070c18',
-          surface: '#0d1426',
-          elevated: '#121b30',
+          base: '#070A0F',
+          surface: '#0E1420',
+          elevated: '#151E30',
           border: 'rgba(255,255,255,0.07)',
         },
+        zulia: {
+          50:  '#E6F3FB',
+          100: '#B3D9F5',
+          200: '#66B3EB',
+          300: '#3399E0',
+          400: '#0080C8',
+          500: '#0068A8',
+          600: '#004E80',
+          700: '#003458',
+        },
+        gold: {
+          50:  '#FFF8E0',
+          100: '#FFF0B3',
+          200: '#FFE566',
+          300: '#FFD633',
+          400: '#FFCC00',
+          500: '#E6B800',
+          600: '#B38F00',
+          700: '#7A6200',
+        },
         accent: {
-          DEFAULT: '#6366f1',
-          light: '#818cf8',
-          dim: '#4f46e5',
-          violet: '#8b5cf6',
-          glow: 'rgba(99,102,241,0.35)',
+          DEFAULT: '#0080C8',
+          light: '#3399E0',
+          dim: '#0068A8',
+          gold: '#FFCC00',
+          glow: 'rgba(0,128,200,0.35)',
         },
       },
       fontFamily: {
@@ -28,13 +48,13 @@ export default {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'mesh-dark': `
-          radial-gradient(at 20% 20%, rgba(99,102,241,0.15) 0px, transparent 50%),
-          radial-gradient(at 80% 80%, rgba(139,92,246,0.12) 0px, transparent 50%),
-          radial-gradient(at 50% 50%, rgba(59,130,246,0.05) 0px, transparent 70%)
+          radial-gradient(at 20% 20%, rgba(0,128,200,0.12) 0px, transparent 50%),
+          radial-gradient(at 80% 80%, rgba(255,204,0,0.07) 0px, transparent 50%),
+          radial-gradient(at 50% 50%, rgba(51,153,224,0.05) 0px, transparent 70%)
         `,
         'mesh-light': `
-          radial-gradient(at 20% 20%, rgba(99,102,241,0.08) 0px, transparent 50%),
-          radial-gradient(at 80% 80%, rgba(139,92,246,0.06) 0px, transparent 50%)
+          radial-gradient(at 20% 20%, rgba(0,128,200,0.07) 0px, transparent 50%),
+          radial-gradient(at 80% 80%, rgba(255,204,0,0.05) 0px, transparent 50%)
         `,
       },
       animation: {
@@ -82,10 +102,9 @@ export default {
       boxShadow: {
         'glass': '0 4px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.06)',
         'glass-lg': '0 8px 40px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08)',
-        'glow-indigo': '0 0 40px rgba(99,102,241,0.25)',
-        'glow-violet': '0 0 40px rgba(139,92,246,0.2)',
-        'glow-blue': '0 0 60px rgba(59,130,246,0.3)',
-        'photo': '0 0 0 1px rgba(99,102,241,0.3), 0 0 80px rgba(99,102,241,0.2), 0 20px 60px rgba(0,0,0,0.5)',
+        'glow-blue': '0 0 40px rgba(0,128,200,0.25)',
+        'glow-gold': '0 0 40px rgba(255,204,0,0.2)',
+        'photo': '0 0 0 1px rgba(0,128,200,0.3), 0 0 80px rgba(0,128,200,0.15), 0 20px 60px rgba(0,0,0,0.5)',
       },
     },
   },

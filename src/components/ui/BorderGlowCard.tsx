@@ -107,15 +107,15 @@ export interface BorderGlowCardProps {
   fillOpacity?: number
 }
 
-// Site-palette defaults: indigo / violet / blue
-const DEFAULT_COLORS = ['#818cf8', '#a78bfa', '#60a5fa']
+// Site-palette defaults: Zulia — blue / sky / gold
+const DEFAULT_COLORS = ['#0080C8', '#33AAEE', '#FFCC00']
 
 export function BorderGlowCard({
   children,
   className = '',
   innerClassName = '',
   edgeSensitivity = 30,
-  glowColor = '239 84 67',
+  glowColor = '204 85 58',
   backgroundColor,            // resolved below
   borderRadius = 28,
   glowRadius = 40,
@@ -129,7 +129,7 @@ export function BorderGlowCard({
   const isDark = useIsDark()
 
   // Resolve background: use explicit prop, else derive from current theme reactively
-  const resolvedBg = backgroundColor ?? (isDark ? '#0d1426' : '#ffffff')
+  const resolvedBg = backgroundColor ?? (isDark ? '#0E1420' : '#ffffff')
 
   const getCenterOfElement = useCallback((el: HTMLElement) => {
     const { width, height } = el.getBoundingClientRect()

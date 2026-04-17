@@ -12,11 +12,11 @@ export function SectionHeader({ eyebrow, title, titleAccent, description, center
   return (
     <AnimatedSection className={`mb-16 ${centered ? 'text-center' : ''}`}>
       <div className={`flex items-center gap-3 mb-4 ${centered ? 'justify-center' : ''}`}>
-        <div className="h-px w-8 bg-gradient-to-r from-indigo-500 to-violet-500" />
-        <span className="text-xs font-mono font-medium tracking-widest uppercase text-indigo-500 dark:text-indigo-400">
+        <div className="h-px w-8 bg-gradient-to-r from-zulia-400 to-zulia-600" />
+        <span className="text-xs font-mono font-medium tracking-widest uppercase text-zulia-400 dark:text-zulia-300">
           {eyebrow}
         </span>
-        <div className="h-px w-8 bg-gradient-to-r from-violet-500 to-transparent" />
+        <div className="h-px w-8 bg-gradient-to-r from-gold-400 to-transparent" />
       </div>
 
       <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">

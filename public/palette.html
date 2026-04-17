@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Palette — Zulia Inspiration | Marco Montilla</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #070A0F;
+      color: #e0e8f0;
+      padding: 48px 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    a { color: #3399E0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .back { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #4A6078; margin-bottom: 40px; }
+    .back:hover { color: #8896A8; text-decoration: none; }
+
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.5px; }
+    .subtitle { font-size: 13px; color: #6a8099; margin-bottom: 40px; }
+    h2 {
+      font-size: 10px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #3A5060;
+      margin-bottom: 14px; margin-top: 40px;
+    }
+    h2:first-of-type { margin-top: 0; }
+
+    /* ── Flag section ── */
+    .flag-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 28px;
+      background: #0E1420;
+      border: 1px solid #1E2D40;
+      border-radius: 16px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .flag-img { width: 260px; border-radius: 10px; flex-shrink: 0; }
+    .flag-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .flag-info p { font-size: 13px; color: #8896A8; line-height: 1.65; max-width: 440px; }
+    .flag-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .flag-chip {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 14px; border-radius: 10px;
+      background: #151E30; border: 1px solid #1E2D40;
+      font-size: 12px; font-weight: 600; color: #C8D8E8;
+      font-family: monospace;
+    }
+    .flag-dot { width: 18px; height: 18px; border-radius: 5px; flex-shrink: 0; }
+
+    /* ── Swatch grid ── */
+    .row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .swatch { border-radius: 10px; overflow: hidden; min-width: 90px; flex: 1; }
+    .swatch-color { height: 60px; }
+    .swatch-info { padding: 8px 10px; background: #0E1420; }
+    .swatch-name { font-size: 10px; font-weight: 600; color: #6A8099; margin-bottom: 2px; }
+    .swatch-hex  { font-size: 12px; font-weight: 700; color: #C8D8E8; font-family: monospace; }
+    .swatch-role { font-size: 10px; color: #3A5060; margin-top: 2px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── Live preview ── */
+    .preview { margin-top: 8px; border-radius: 14px; overflow: hidden; border: 1px solid #1E2D40; }
+    .preview-dark  { background: #070A0F; padding: 36px; }
+    .preview-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #3A5060; margin-bottom: 20px; }
+
+    .mock-card {
+      background: #0E1420; border: 1px solid #1E2D40;
+      border-radius: 12px; padding: 22px;
+    }
+    .mock-role  { font-size: 10px; color: #4A6078; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px; }
+    .mock-name  { font-size: 20px; font-weight: 700; color: #F0F4F8; margin-bottom: 8px; }
+    .mock-body  { font-size: 13px; color: #8896A8; line-height: 1.6; margin-bottom: 16px; }
+    .mock-tags  { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .mock-tag   {
+      font-size: 11px; font-weight: 600; border-radius: 6px;
+      padding: 3px 10px; font-family: monospace;
+    }
+    .tag-blue { background: rgba(0,128,200,0.12); color: #3399E0; border: 1px solid rgba(0,128,200,0.25); }
+    .tag-gold { background: rgba(255,204,0,0.10); color: #FFD633; border: 1px solid rgba(255,204,0,0.20); }
+    .mock-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-primary { font-size: 13px; font-weight: 600; border-radius: 9px; padding: 9px 20px; background: linear-gradient(135deg,#0080C8,#004E80); color: #fff; border: none; cursor: default; }
+    .btn-outline { font-size: 13px; font-weight: 600; border-radius: 9px; padding: 9px 20px; background: transparent; color: #FFCC00; border: 1px solid rgba(255,204,0,0.35); cursor: default; }
+
+    footer { margin-top: 48px; font-size: 11px; color: #3A5060; border-top: 1px solid #1E2D40; padding-top: 20px; }
+  </style>
+</head>
+<body>
+
+<a class="back" href="./index.html">← Back to portfolio</a>
+
+<h1>Color Palette</h1>
+<p class="subtitle">Inspired by the Zulia state flag — the colors of Venezuela's most storied region.</p>
+
+<!-- SOURCE -->
+<h2>Inspiration — Zulia Flag</h2>
+<div class="flag-section">
+  <img class="flag-img" src="./zulia-flag-color-palette.png" alt="Zulia flag color palette" />
+  <div class="flag-info">
+    <h3>Estado Zulia, Venezuela</h3>
+    <p>
+      The Zulia state flag carries three colors: a deep cerulean blue representing Lake Maracaibo and the sky,
+      black for the oil wealth beneath the earth, and a bold golden sun with a lightning bolt — the region's
+      symbol of energy and resilience. White frames the coat of arms.
+      These four tones anchor the entire design system of this portfolio.
+    </p>
+    <div class="flag-chips">
+      <div class="flag-chip"><div class="flag-dot" style="background:#0080C8"></div>#0080C8 — Blue</div>
+      <div class="flag-chip"><div class="flag-dot" style="background:#000000;border:1px solid #1E2D40"></div>#000000 — Black</div>
+      <div class="flag-chip"><div class="flag-dot" style="background:#FFFFFF"></div>#FFFFFF — White</div>
+      <div class="flag-chip"><div class="flag-dot" style="background:#FFCC00"></div>#FFCC00 — Gold</div>
+    </div>
+  </div>
+</div>
+
+<!-- BACKGROUNDS -->
+<div class="two-col">
+  <div>
+    <h2>Dark Mode — Surfaces</h2>
+    <div class="row" style="flex-direction:column;gap:6px">
+      <div class="swatch"><div class="swatch-color" style="background:#070A0F"></div><div class="swatch-info"><div class="swatch-name">bg-base</div><div class="swatch-hex">#070A0F</div><div class="swatch-role">Page background</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#0E1420"></div><div class="swatch-info"><div class="swatch-name">bg-surface</div><div class="swatch-hex">#0E1420</div><div class="swatch-role">Cards & panels</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#151E30"></div><div class="swatch-info"><div class="swatch-name">bg-elevated</div><div class="swatch-hex">#151E30</div><div class="swatch-role">Elevated / hover state</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1E2D40"></div><div class="swatch-info"><div class="swatch-name">border-subtle</div><div class="swatch-hex">#1E2D40</div><div class="swatch-role">Default card border</div></div></div>
+    </div>
+
+    <h2 style="margin-top:28px">Text</h2>
+    <div class="row" style="flex-direction:column;gap:6px">
+      <div class="swatch"><div class="swatch-color" style="background:#F0F4F8"></div><div class="swatch-info"><div class="swatch-name">text-primary</div><div class="swatch-hex">#F0F4F8</div><div class="swatch-role">Headings & body</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#8896A8"></div><div class="swatch-info"><div class="swatch-name">text-secondary</div><div class="swatch-hex">#8896A8</div><div class="swatch-role">Subtitles & labels</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4A6078"></div><div class="swatch-info"><div class="swatch-name">text-muted</div><div class="swatch-hex">#4A6078</div><div class="swatch-role">Disabled / metadata</div></div></div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Light Mode — Surfaces</h2>
+    <div class="row" style="flex-direction:column;gap:6px">
+      <div class="swatch"><div class="swatch-color" style="background:#F4F7FA;border:1px solid #dde5ee"></div><div class="swatch-info"><div class="swatch-name">bg-base</div><div class="swatch-hex">#F4F7FA</div><div class="swatch-role">Page background</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border:1px solid #dde5ee"></div><div class="swatch-info"><div class="swatch-name">bg-surface</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-role">Cards & panels</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E8EEF5;border:1px solid #dde5ee"></div><div class="swatch-info"><div class="swatch-name">bg-elevated</div><div class="swatch-hex">#E8EEF5</div><div class="swatch-role">Elevated / hover state</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#C8D5E0"></div><div class="swatch-info"><div class="swatch-name">border-subtle</div><div class="swatch-hex">#C8D5E0</div><div class="swatch-role">Default card border</div></div></div>
+    </div>
+
+    <h2 style="margin-top:28px">Text</h2>
+    <div class="row" style="flex-direction:column;gap:6px">
+      <div class="swatch"><div class="swatch-color" style="background:#0D1520"></div><div class="swatch-info"><div class="swatch-name">text-primary</div><div class="swatch-hex">#0D1520</div><div class="swatch-role">Headings & body</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4E6070"></div><div class="swatch-info"><div class="swatch-name">text-secondary</div><div class="swatch-hex">#4E6070</div><div class="swatch-role">Subtitles & labels</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#8AA0B0"></div><div class="swatch-info"><div class="swatch-name">text-muted</div><div class="swatch-hex">#8AA0B0</div><div class="swatch-role">Disabled / metadata</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- BLUE SCALE -->
+<h2>Blue Scale — Primary (Zulia flag blue)</h2>
+<div class="row">
+  <div class="swatch"><div class="swatch-color" style="background:#E6F3FB"></div><div class="swatch-info"><div class="swatch-name">zulia-50</div><div class="swatch-hex">#E6F3FB</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#B3D9F5"></div><div class="swatch-info"><div class="swatch-name">zulia-100</div><div class="swatch-hex">#B3D9F5</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#66B3EB"></div><div class="swatch-info"><div class="swatch-name">zulia-200</div><div class="swatch-hex">#66B3EB</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#3399E0"></div><div class="swatch-info"><div class="swatch-name">zulia-300</div><div class="swatch-hex">#3399E0</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0080C8"></div><div class="swatch-info"><div class="swatch-name">zulia-400 ★</div><div class="swatch-hex">#0080C8</div><div class="swatch-role">Flag blue — default</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0068A8"></div><div class="swatch-info"><div class="swatch-name">zulia-500</div><div class="swatch-hex">#0068A8</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#004E80"></div><div class="swatch-info"><div class="swatch-name">zulia-600</div><div class="swatch-hex">#004E80</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#003458"></div><div class="swatch-info"><div class="swatch-name">zulia-700</div><div class="swatch-hex">#003458</div></div></div>
+</div>
+
+<!-- GOLD SCALE -->
+<h2>Gold Scale — Accent (Zulia sun / lightning)</h2>
+<div class="row">
+  <div class="swatch"><div class="swatch-color" style="background:#FFF8E0"></div><div class="swatch-info"><div class="swatch-name">gold-50</div><div class="swatch-hex">#FFF8E0</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FFF0B3"></div><div class="swatch-info"><div class="swatch-name">gold-100</div><div class="swatch-hex">#FFF0B3</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FFE566"></div><div class="swatch-info"><div class="swatch-name">gold-200</div><div class="swatch-hex">#FFE566</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FFD633"></div><div class="swatch-info"><div class="swatch-name">gold-300</div><div class="swatch-hex">#FFD633</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FFCC00"></div><div class="swatch-info"><div class="swatch-name">gold-400 ★</div><div class="swatch-hex">#FFCC00</div><div class="swatch-role">Flag gold — accent</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#E6B800"></div><div class="swatch-info"><div class="swatch-name">gold-500</div><div class="swatch-hex">#E6B800</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#B38F00"></div><div class="swatch-info"><div class="swatch-name">gold-600</div><div class="swatch-hex">#B38F00</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#7A6200"></div><div class="swatch-info"><div class="swatch-name">gold-700</div><div class="swatch-hex">#7A6200</div></div></div>
+</div>
+
+<!-- GRADIENTS -->
+<h2>Gradients & Glows</h2>
+<div class="row">
+  <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#0080C8,#004E80)"></div><div class="swatch-info"><div class="swatch-name">gradient-blue</div><div class="swatch-hex">#0080C8 → #004E80</div><div class="swatch-role">CTA buttons</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:conic-gradient(from 180deg,#0080C8,#3399E0,#FFCC00,#0080C8)"></div><div class="swatch-info"><div class="swatch-name">gradient-ring</div><div class="swatch-hex">Conic — photo ring</div><div class="swatch-role">Profile photo</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#070A0F 0%,#0E1D30 60%,#001830 100%)"></div><div class="swatch-info"><div class="swatch-name">gradient-hero-dark</div><div class="swatch-hex">bg → deep blue</div><div class="swatch-role">Hero background</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#F4F7FA 0%,#E0EBF5 100%)"></div><div class="swatch-info"><div class="swatch-name">gradient-hero-light</div><div class="swatch-hex">F4F7FA → E0EBF5</div><div class="swatch-role">Hero background</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle,rgba(0,128,200,0.55) 0%,transparent 70%)"></div><div class="swatch-info"><div class="swatch-name">glow-blue</div><div class="swatch-hex">#0080C8 / 55%</div><div class="swatch-role">Card & orb glow</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle,rgba(255,204,0,0.45) 0%,transparent 70%)"></div><div class="swatch-info"><div class="swatch-name">glow-gold</div><div class="swatch-hex">#FFCC00 / 45%</div><div class="swatch-role">Accent orb glow</div></div></div>
+</div>
+
+<!-- PREVIEW -->
+<h2>Live Preview</h2>
+<div class="preview">
+  <div class="preview-dark">
+    <div class="preview-label">Dark mode — card example</div>
+    <div class="mock-card">
+      <div class="mock-role">Backend Engineer</div>
+      <div class="mock-name">Marco Montilla</div>
+      <div class="mock-body">Lead backend engineer with 9+ years building distributed systems and reliable production infrastructure at scale.</div>
+      <div class="mock-tags">
+        <span class="mock-tag tag-blue">Go</span>
+        <span class="mock-tag tag-blue">Kubernetes</span>
+        <span class="mock-tag tag-blue">PostgreSQL</span>
+        <span class="mock-tag tag-gold">★ Open to work</span>
+      </div>
+      <div class="mock-btns">
+        <span class="btn-primary">View Projects</span>
+        <span class="btn-outline">Download CV</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>★ marks the default/base tone per scale. Scales are used for hover states, glows, borders, and surface layering.</p>
+  <p style="margin-top:6px"><a href="./index.html">← Back to portfolio</a></p>
+</footer>
+
+</body>
+</html>
