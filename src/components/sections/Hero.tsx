@@ -72,7 +72,7 @@ function ProfilePhoto() {
       >
         <div className="w-full h-full rounded-full p-[2px] bg-dark-base/80">
           <img
-            src={`${import.meta.env.BASE_URL}profile.jpg`}
+            src={`${import.meta.env.BASE_URL}Perfil_460x460.jpg`}
             alt="Marco Montilla"
             className="w-full h-full rounded-full object-cover object-center"
             loading="eager"

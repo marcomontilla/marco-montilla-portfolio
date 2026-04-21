@@ -92,7 +92,7 @@ export function Navbar() {
                 className={[
                   'px-2.5 py-1.5 transition-colors duration-200',
                   lang === 'en'
-                    ? 'bg-zulia-400 text-white'
+                    ? 'bg-zulia-600 text-white'
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white',
                 ].join(' ')}
                 aria-label="Switch to English"
@@ -104,7 +104,7 @@ export function Navbar() {
                 className={[
                   'px-2.5 py-1.5 transition-colors duration-200',
                   lang === 'es'
-                    ? 'bg-zulia-400 text-white'
+                    ? 'bg-zulia-600 text-white'
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white',
                 ].join(' ')}
                 aria-label="Cambiar a Español"
@@ -204,7 +204,7 @@ export function Navbar() {
                   className={[
                     'flex-1 py-2.5 transition-colors duration-200',
                     lang === 'en'
-                      ? 'bg-zulia-400 text-white'
+                      ? 'bg-zulia-600 text-white'
                       : 'text-slate-500 dark:text-slate-400',
                   ].join(' ')}
                 >
@@ -215,7 +215,7 @@ export function Navbar() {
                   className={[
                     'flex-1 py-2.5 transition-colors duration-200',
                     lang === 'es'
-                      ? 'bg-zulia-400 text-white'
+                      ? 'bg-zulia-600 text-white'
                       : 'text-slate-500 dark:text-slate-400',
                   ].join(' ')}
                 >

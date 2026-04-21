@@ -46,12 +46,12 @@ export function Footer() {
               href={`${import.meta.env.BASE_URL}palette.html`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500 hover:text-zulia-400 dark:hover:text-zulia-300 transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-slate-400 dark:text-slate-300 hover:text-zulia-400 dark:hover:text-zulia-300 transition-colors duration-200"
             >
               <Palette size={12} />
               {t.footer.palette}
             </a>
-            <p className="text-xs text-slate-400 dark:text-slate-500">
+            <p className="text-xs text-slate-400 dark:text-slate-300">
               © {year} Marco Montilla. {t.footer.built}
             </p>
           </div>
